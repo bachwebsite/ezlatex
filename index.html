@@ -2,10 +2,8 @@
 <html lang="en">
 <head>
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>LaTex Equation Editor</title>
+   <title>EXLaTex</title>
    <meta name="Description"
-      content="LaTex Equation Editor  - Try LaTex equation editor online alongwith MathJax, AMS, MathML." />
-   <meta name="Keywords" content="LaTex, Equation, Editor, Try, Equation, Editor, Online, MathJax, AMS, MathML." />
    <!-- <script src="https://unpkg.com/vue@next"></script> -->
    <script src="https://unpkg.com/vue@3.2.22/dist/vue.global.prod.js"></script>
    <script src="/assets/jquery-easyui-1.5.21/js/jquery.min.js"></script>
@@ -172,128 +170,11 @@
    </style>
 </head>
 
-<body class="easyui-layout" id="cc">
+<body class="easyui-layout" id="cc" onload="setEditorFontSize('50');">
    <div id="loading"></div>
    <form id="ff">
       <iframe id="download" style="display:hidden"></iframe>
-      <div data-options="region:'north'"
-         style="height:65px; width:100%;overflow:hidden;background:url(/codingground/images/top_bg.png);">
-         <h1 class="main-title">${\color[RGB]{75,0,130} \Huge \mathbb{Latex\:Equation\:Editor}}$</h1>
-         <div class="easyui-panel,border:false,doSize:false" style="margin:18px 0px 0px 0px; float:right;">
-            <!-- <a id="help" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-help', plain:true" style="float:right">Help</a> -->
-            <!-- <a id="tutorials" target="_blank" href="http://www.tutorialspoint.com/tutorialslibrary.htm" class="easyui-linkbutton" data-options="iconCls:'icon-library', plain:true" style="float:right; position:relative; top:-1px;">Tutorials</a> -->
-            
-            <a href="https://github.com/mokeyish/Latex-Equation-Editor" style="float:right; position:relative; top:-1px;" target="_blank" rel="noopener noreferrer" data-options="plain:true" class="easyui-linkbutton l-btn l-btn-small l-btn-plain">
-               <span>Code<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_3J9K"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></span></a>
-
-            <a id="tutorials" href="#" class="easyui-menubutton" data-options="menu:'#mm4',iconCls:'icon-library'"
-               class="easyui-linkbutton" style="float:right; position:relative; top:-1px;">Tutorials</a>
-
-            <a id="view" href="#" class="easyui-menubutton" data-options="menu:'#mm3',iconCls:'icon-view'"
-               style="float:right">View</a>
-
-            <a id="edit" href="#" class="easyui-menubutton" data-options="menu:'#mm2',iconCls:'icon-edit'"
-               style="float:right">Edit</a>
-               
-            <a href="https://www.tutorialspoint.com/online_dev_tools.htm" target="_blank" class="easyui-linkbutton l-btn l-btn-small l-btn-plain"
-               data-options="plain:true, iconCls:'icon-tools'" style="float:right">Dev Tools</a>
-
-         </div>
-         <div id="mm2" style="width:200px;">
-            <div id="undo" data-options="iconCls:'icon-undo'">Undo</div>
-            <div id="redo" data-options="iconCls:'icon-redo'">Redo</div>
-            <div class="menu-sep"></div>
-            <div id="cut" data-options="iconCls:'icon-cut'">Cut</div>
-            <div id="copy" data-options="iconCls:'icon-copy'">Copy</div>
-            <div id="paste" data-options="iconCls:'icon-paste'">Paste</div>
-            <div id="delete" data-options="iconCls:'icon-delete'">Delete</div>
-            <div id="select" data-options="iconCls:'icon-select'">Select All</div>
-            <div class="menu-sep"></div>
-            <div id="find" data-options="iconCls:'icon-find'">Find</div>
-            <div id="findreplace" data-options="iconCls:'icon-replace'">Find and Replace</div>
-         </div>
-         <div id="mm3" style="width:200px;">
-            <div id="editor-theme" data-options="iconCls:'icon-editor-theme'"><span>Editor Theme</span>
-               <div>
-                  <div onclick="setEditorTheme('chrome');">Chrome</div>
-                  <div onclick="setEditorTheme('crimson_editor');">Crimson Editor</div>
-                  <div onclick="setEditorTheme('dreamweaver');">Dreamweaver</div>
-                  <div onclick="setEditorTheme('eclipse');">Eclipse</div>
-                  <div onclick="setEditorTheme('github');">Github</div>
-                  <div onclick="setEditorTheme('kuroir');">Kuroir</div>
-                  <div onclick="setEditorTheme('solarized_light');">Solarized Light</div>
-                  <div onclick="setEditorTheme('solarized_dark');">Solarized Dark</div>
-                  <div onclick="setEditorTheme('xcode');">XCode</div>
-                  <div onclick="setEditorTheme('ambiance');">Ambiance</div>
-                  <div onclick="setEditorTheme('cobalt');">Cobalt</div>
-                  <div onclick="setEditorTheme('idle_fingers');">idle Fingers</div>
-                  <div onclick="setEditorTheme('kr_theme');">krTheme</div>
-                  <div onclick="setEditorTheme('mono_industrial');">Mono Industrial</div>
-                  <div onclick="setEditorTheme('monokai');">Monokai</div>
-                  <div onclick="setEditorTheme('terminal');">Terminal</div>
-                  <div onclick="setEditorTheme('textmate');">Textmate</div>
-                  <div onclick="setEditorTheme('tomorrow');">Tomorrow</div>
-                  <div onclick="setEditorTheme('twilight');">Twilight</div>
-                  <div onclick="setEditorTheme('vibrant_ink');">Vibrant Ink</div>
-               </div>
-            </div>
-            <div id="font-size" data-options="iconCls:'icon-font-size'"><span>Font Size</span>
-               <div>
-                  <div onclick="setEditorFontSize('8');">8px</div>
-                  <div onclick="setEditorFontSize('9');">9px</div>
-                  <div onclick="setEditorFontSize('10');">10px</div>
-                  <div onclick="setEditorFontSize('11');">11px</div>
-                  <div onclick="setEditorFontSize('12');">12px</div>
-                  <div onclick="setEditorFontSize('13');">13px</div>
-                  <div onclick="setEditorFontSize('14');">14px</div>
-                  <div onclick="setEditorFontSize('15');">15px</div>
-                  <div onclick="setEditorFontSize('16');">16px</div>
-                  <div onclick="setEditorFontSize('17');">17px</div>
-                  <div onclick="setEditorFontSize('18');">18px</div>
-                  <div onclick="setEditorFontSize('20');">20px</div>
-                  <div onclick="setEditorFontSize('22');">22px</div>
-                  <div onclick="setEditorFontSize('24');">24px</div>
-               </div>
-            </div>
-            <div id="tab-size" data-options="iconCls:'icon-tab-size'"><span>Tab Size</span>
-               <div>
-                  <div onclick="setEditorTabSize('1');">1</div>
-                  <div onclick="setEditorTabSize('2');">2</div>
-                  <div onclick="setEditorTabSize('3');">3</div>
-                  <div onclick="setEditorTabSize('4');">4</div>
-                  <div onclick="setEditorTabSize('5');">5</div>
-                  <div onclick="setEditorTabSize('6');">6</div>
-                  <div onclick="setEditorTabSize('7');">7</div>
-                  <div onclick="setEditorTabSize('8');">8</div>
-               </div>
-            </div>
-            <div id="soft-wrap" data-options="iconCls:'icon-soft-wrap'"><span>Soft Wrap</span>
-               <div>
-                  <div onclick="setEditorSoftWrap('true');">On</div>
-                  <div onclick="setEditorSoftWrap('false');">Off</div>
-                  <div onclick="setEditorSoftWrap('40');">40 Chars</div>
-                  <div onclick="setEditorSoftWrap('60');">60 Chars</div>
-                  <div onclick="setEditorSoftWrap('80');">80 Chars</div>
-                  <div onclick="setEditorSoftWrap('100');">100 Chars</div>
-                  <div onclick="setEditorSoftWrap('120');">120 Chars</div>
-                  <div onclick="setEditorSoftWrap('140');">140 Chars</div>
-               </div>
-            </div>
-            <div class="menu-sep"></div>
-            <div onclick="setEditorInvisible(true);" data-options="iconCls:'icon-show-invisible'">Show Invisible</div>
-            <div onclick="setEditorInvisible(false);" data-options="iconCls:'icon-hide-invisible'">Hide Invisible</div>
-            <div class="menu-sep"></div>
-            <div onclick="setEditorGutter(true);" data-options="iconCls:'icon-show-gutter'">Show Gutter</div>
-            <div onclick="setEditorGutter(false);" data-options="iconCls:'icon-hide-gutter'">Hide Gutter</div>
-         </div>
-         <div id="mm4" style="width:200px;">
-            <div>
-               <a target="_blank" href="https://www.tutorialspoint.com/tex_commands/index.htm">Learn tex commands</a>
-            </div>
-            <div>
-               <a target="_blank" href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">Wiki：LaTeX/Mathematics</a>
-            </div>
-         </div>
+      <div data-options="region:'north'" style="height:65px; width:100%;overflow:hidden;background:url(/codingground/images/top_bg.png);">
       </div>
       <!--HEADER ENDS -->
       <div id="east"
