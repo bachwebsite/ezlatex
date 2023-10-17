@@ -3,8 +3,16 @@
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </script>
+<script>
+function debug() {
+  var inputty = document.getElementById("grailed").value;
+  var _ge = inputty.toString();  
+
+  document.getElementById('output').textContent = _ge;
+}
+</script>
+<input type="text" id="grailed"></input>
 </head>
 <body>
-When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+<p id="output"></p>
 </body>
