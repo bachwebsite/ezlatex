@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>EXLaTex</title>
+   <title>EzLaTex</title>
    <meta name="Description"
    <!-- <script src="https://unpkg.com/vue@next"></script> -->
    <script src="https://unpkg.com/vue@3.2.22/dist/vue.global.prod.js"></script>
@@ -194,84 +194,7 @@
       </div>
       <div id="south" data-options="region:'south'" style="height:250px;border-top:0px;">
          <!--FOOTER STARTS -->
-         <div id="container" style="height:100%;">
-            <div class="easyui-tabs" data-options="tabPosition:'top',fit:true">
-               <div title="Basic" style="padding:10px">
-                  <ul class="keyboard">
-                     <li class="letter" style="font-size:10px;" v-on:click="()=>insert('\\:')">Space</li>
-                     <li class="letter" style="font-size:10px;" v-on:click="()=>insert('\\quad')">Quad</li>
-                     <li class="letter" style="font-size:10px;" v-on:click="()=>insert('\\\\')">Enter</li>
-
-                     <li class="letter" v-for="item in basic" v-on:click="()=>insert(item)">
-                        ${{item}}$
-                     </li>
-                  </ul>
-               </div>
-               <div title="Maths" style="padding:10px">
-                  <ul class="keyboard">
-                     <li class="tab" v-for="item in maths" v-on:click="()=>insert(item)">
-                        ${{item}}$
-                     </li>
-                  </ul>
-               </div>
-               <div title="Formula" style="padding:10px">
-                  <ul class="keyboard">
-                     <li class="bigtab" :class="get_class(item)" v-for="item in formula" v-on:click="()=>insert(item)">
-                        ${{latex(item)}}$
-                     </li>
-                  </ul>
-               </div>
-               <div title="Arrows" style="padding:10px;">
-                  <ul class="keyboard">
-                     <li class="letter" v-for="item in arrows" v-on:click="()=>insert(item)">
-                        ${{item}}$
-                     </li>
-                  </ul>
-               </div>
-               <div title="Alphabets" style="padding:10px">
-                  <ul class="keyboard">
-                     <li class="letter" :class="get_class(item)" v-for="item in alphabets" v-on:click="()=>insert(item)">
-                        ${{latex(item)}}$
-                     </li>
-                  </ul>
-               </div>
-               <div title="Symbols" style="padding:10px">
-                  <ul class="keyboard">
-                     <li class="letter" v-for="item in symbols" v-on:click="()=>insert(item)">
-                        ${{item}}$
-                     </li>
-                  </ul>
-               </div>
-               <div title="Operators" style="padding:10px">
-                  <ul class="keyboard">
-                     <li class="letter" v-for="item in operators" v-on:click="()=>insert(item)">
-                        ${{item}}$
-                     </li>
-                  </ul>
-               </div>
-               <div title="Functions" style="padding:10px">
-                  <ul class="keyboard">
-                     <li class="letter small" v-for="item in functions" v-on:click="()=>insert(item)">
-                        ${{item}}$
-                     </li>
-                  </ul>
-               </div>
-               <div title="Fonts" style="padding:10px">
-                  <ul class="keyboard">
-                     <li class="tab medium" v-for="item in fonts" v-on:click="()=>this.insert(item)">
-                        ${{item}}$
-                     </li>
-                  </ul>
-               </div>
-               <div title="Colors" style="padding:10px">
-                  <ul class="keyboard">
-                     <li class="colorstrip" v-for="item in colors" v-on:click="()=>insert(item)">
-                        ${{item}}$
-                     </li>
-                  </ul>
-               </div>
-            </div>
-         </div>
+         <div id="container" style="height:100%;"></div>
       </div>
       </div>
       <!--FOOTER ENDS -->
