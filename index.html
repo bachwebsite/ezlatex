@@ -177,6 +177,21 @@
       <div data-options="region:'north'" style="height:65px; width:100%;overflow:hidden;background:url(/codingground/images/top_bg.png);">
       </div>
       <!--HEADER ENDS -->
+      <div id="east"
+         data-options="region:'east',iconCls:'icon-terminal', title:'Result', split:true, tools:'#result-tools',toolPosition:'right'"
+         style="width:50%; border-left:5px solid #eee; padding:20px;overflow:hidden; background:#fff;">
+      </div>
+      <div id="result-tools">
+         <a href="#" class="easyui-menubutton" data-options="menu:'#dwmenu', iconCls:'icon-download-file'"
+            style="position:relative;top:-5px;width:120px;white-space:nowrap;">Download</a>
+      </div>
+      <div id="dwmenu" style="width:100px;">
+         <div data-options="iconCls:'icon-png'" onclick="download('png')">PNG</div>
+         <div data-options="iconCls:'icon-gif'" onclick="download('gif')">GIF</div>
+         <div data-options="iconCls:'icon-jpg'" onclick="download('jpg')">JPG</div>
+         <div data-options="iconCls:'icon-pdf'" onclick="download('pdf')">PDF</div>
+         <div data-options="iconCls:'icon-svg'" onclick="download('svg')">SVG</div>
+      </div>
       <div id="south" data-options="region:'south'" style="height:250px;border-top:0px;">
          <!--FOOTER STARTS -->
          <div id="container" style="height:100%;"></div>
